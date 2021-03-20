@@ -1,0 +1,12 @@
+IDENTIFICADOR
+    (a..z) (A..Z | 0..9 | a..z)*
+NÚMEROS 
+    (0..9)+
+PONTUAÇÃO
+    ;
+OP_REL
+    = | <> | < | > | <= | >= | >
+OP_ATR
+    :=
+
+PALAVRAS RESERVADAS
