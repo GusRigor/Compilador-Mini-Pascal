@@ -57,3 +57,12 @@ Variável -> Identificador | Identificador [Expressão]
 Lista de expressões -> Expressão {; Expressão}
 
 -------------------------------------------------------------------------------------------
+Números e Identicadores
+
+Número -> Digito {Digito}
+
+Digito -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+Identificador -> Letra {Letra | Digito}
+
+Letra -> _ | a-z | A-Z
