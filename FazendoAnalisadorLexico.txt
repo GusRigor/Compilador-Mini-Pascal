@@ -23,4 +23,20 @@ Parte de declaração de variáveis -> Declaração de variáveis
 
  Seleção de parâmetros formais -> [var] Lista de Identificadores : Identificador
 
- -----------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Comandos
+
+Comando composto -> begin Comando {; Comando} end
+
+Comando -> Atribuição | Chamada de procedimento | Comando composto | Comando condicional | Comando repetitivo
+
+Atribuição -> Variável := Expressão
+
+Chamada de procedimento -> Identificador [(Lista de expressões)]
+
+Comando condicional -> if Expressão then Comando
+                                    [else Comando]
+
+Comando repetitivo -> while Expressão do Comando
+
+-------------------------------------------------------------------------------------------
