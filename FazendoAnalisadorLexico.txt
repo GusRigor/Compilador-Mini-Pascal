@@ -6,5 +6,21 @@ Bloco -> [Parte de declaração de variáveis]
          [Parte de declaração de sub-rotinas]
          Comando Composto
 
------------------------------------------------------
+------------------------------------------------------------------------------------------
 Declarações
+
+Parte de declaração de variáveis -> Declaração de variáveis
+
+ Declaração de variáveis -> Tipo Lista de Identificadores
+
+ Lista de Identificadores -> Identificador {, Identificador}
+
+ Parte de declaração de sub-rotinas {Declaração de procedimento;}
+
+ Declaração de procedimento -> procedure Identificador [parâmetros formais]; Bloco
+
+ Parâmetros formais -> (Seleção de parâmetros formais {; Seleção de parâmetros formais})
+
+ Seleção de parâmetros formais -> [var] Lista de Identificadores : Identificador
+
+ -----------------------------------------------------------------------------------------
