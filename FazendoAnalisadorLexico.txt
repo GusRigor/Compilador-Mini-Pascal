@@ -40,3 +40,20 @@ Comando condicional -> if Expressão then Comando
 Comando repetitivo -> while Expressão do Comando
 
 -------------------------------------------------------------------------------------------
+Expressões
+
+Expressão -> Expressão simples [Relação Expressão simples]
+
+Relação -> = | <> | < | > | <= | >= | >
+
+Expressão simples -> [ + | - ] Termo {( + | - | or) Termo}
+
+Termo -> Fator {(* | div | and) Fator}
+
+Fator -> variável | Número | (Expressão) | not Fator
+
+Variável -> Identificador | Identificador [Expressão]
+
+Lista de expressões -> Expressão {; Expressão}
+
+-------------------------------------------------------------------------------------------
