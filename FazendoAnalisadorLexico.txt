@@ -1,1 +1,10 @@
-Programa  -> program Identificador
+Bloco e Programa
+
+Programa  -> program Identificador; Bloco.
+
+Bloco -> [Parte de declaração de variáveis]
+         [Parte de declaração de sub-rotinas]
+         Comando Composto
+
+-----------------------------------------------------
+Declarações
