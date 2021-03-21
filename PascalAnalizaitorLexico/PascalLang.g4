@@ -5,7 +5,7 @@ grammar PascalLang;
 programa	: PROGRAM identificador PV bloco
 			;
 			
-bloco		: (part_decl_var)? (part_decl_sub_rotinas)? comando_composto
+bloco		: part_decl_var? part_decl_sub_rotinas? comando_composto
 			;
 
 //Declarações
@@ -22,13 +22,13 @@ lista_identificadores	: identificador (VG identificador)*
 part_decl_sub_rotinas	: ( decl_procedimento PV)*
 						;
 						
-decl_procedimento	: PROCEDURE identificador (parametr_formais)? PV bloco
+decl_procedimento	: PROCEDURE identificador parametr_formais? PV bloco
 					;
 					
 parametr_formais	: AP selec_parametr_formais (PV selec_parametr_formais)* FP
 					;
 			
-selec_parametr_formais	: (VAR)? lista_identificadores DP identificador
+selec_parametr_formais	: VAR? lista_identificadores DP identificador
 						;
 						
 //Comandos
@@ -104,7 +104,7 @@ VAR	:	'var'
 BEGIN	:	'begin'
 		;
 		
-END	:	'end'
+END	:	'end.'
 	;
 
 THEN:	'then'
@@ -131,16 +131,16 @@ AND	:	'and'
 NOT	:	'not'
 	;
 	
-Integer	: 	'Integer'
+Integer	: 	'integer'
 		;
 		
-Real	:	'Real'
+Real	:	'real'
 		;
 		
-Boolean	:	'Boolean'
+Boolean	:	'boolean'
 		;
 		
-Char	:	'Char'
+Char	:	'char'
 		;
 		
 String	:	'String'
