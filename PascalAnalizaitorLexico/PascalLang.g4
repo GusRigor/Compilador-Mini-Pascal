@@ -2,7 +2,7 @@ grammar PascalLang;
 
 //Programa e Bloco
 
-programa	: 'program' identificador ';' bloco
+programa	: PROGRAM identificador PV bloco
 			;
 			
 bloco		: (part_decl_var)? (part_decl_sub_rotinas)? comando_composto
@@ -10,78 +10,150 @@ bloco		: (part_decl_var)? (part_decl_sub_rotinas)? comando_composto
 
 //Declarações
 
-part_decl_var : decl_vars (';' decl_vars)* ';'
+part_decl_var : decl_vars (PV decl_vars)* PV
 			  ;
 
 decl_vars 	: tipo lista_identificadores
 			;
 			
-lista_identificadores	: identificador (',' identificador)*
+lista_identificadores	: identificador (VG identificador)*
 						;
 
-part_decl_sub_rotinas	: ( decl_procedimento ';')*
+part_decl_sub_rotinas	: ( decl_procedimento PV)*
 						;
 						
-decl_procedimento	: 'procedure' identificador (parametr_formais)? ';' bloco
+decl_procedimento	: PROCEDURE identificador (parametr_formais)? PV bloco
 					;
 					
-parametr_formais	: '(' selec_parametr_formais (';' selec_parametr_formais)* ')'
+parametr_formais	: AP selec_parametr_formais (PV selec_parametr_formais)* FP
 					;
 			
-selec_parametr_formais	: ('var')? lista_identificadores ':' identificador
+selec_parametr_formais	: (VAR)? lista_identificadores DP identificador
 						;
 						
 //Comandos
 
-comando_composto	: 'begin' comando (';' comando)* 'end'
+comando_composto	: BEGIN comando (PV comando)* END
 					;
 					
 comando	: atribuicao | chamada_procedimento | comando_composto | comando_condicional | comando_repetitivo
 		;
 		
-atribuicao	: variavel ':=' expressao
+atribuicao	: variavel ATB expressao
 			;
 			
-chamada_procedimento	: identificador ('(' list_expressoes ')')?
+chamada_procedimento	: identificador (AP list_expressoes FP)?
 						;
 						
-comando_condicional	: 'if' expressao 'then' comando ('else' comando)?
+comando_condicional	: IF expressao THEN comando (ELSE comando)?
 					;
 
-comando_repetitivo	: 'while' expressao 'do' comando
+comando_repetitivo	: WHILE expressao DO comando
 					;
 
 //Expressões
-expressao	: expressao_simples (relacao expressao_simples)?
+expressao	: expressao_simples (Relacao expressao_simples)?
 			;
 					
-relacao	: '=' | '<>' | '<' | '<=' | '>=' | '>'
-		;
-			
-expressao_simples	: ('+' | '-')? termo (('+' | '-' | 'or') termo)*
+expressao_simples	: (PLUS | MINUS)? termo ((PLUS | MINUS | OR) termo)*
 					;
 					
-termo	: fator (('*' | 'div' | 'and') fator)*
+termo	: fator ((TIMES | DIV | AND) fator)*
 		;
 		
-fator	: variavel | numero | '('expressao')' | 'not' fator
+fator	: variavel | numero | AP expressao FP | NOT fator
 		;
 
 variavel	: identificador | identificador (expressao)?
 			;
 			
-list_expressoes	: expressao (',' expressao)*
+list_expressoes	: expressao (VG expressao)*
 				;		
 		
 //Números e idetificadores
-numero	:digito (digito)*
+numero	:Digito (Digito)*
 		;	
-
-digito	: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
-		;
 		
-identificador	: letra (letra | digito)*
+identificador	: Letra (Letra | Digito)*
 				;
 				
-letra	:	'_' | [a-z] | [A-Z] 			
-		;			
+				
+//TOKENS				
+				
+Digito	: [0-9]
+		;	
+				
+Letra	:	'_' | [a-z] | [A-Z] 			
+		;
+
+Relacao	: '=' | '<>' | '<' | '<=' | '>=' | '>'
+		;
+	
+PROGRAM : 'program'
+		;
+	
+PROCEDURE	: 'procedure'
+			;
+			
+VAR	:	'var'
+	;
+	
+BEGIN	:	'begin'
+		;
+		
+END	:	'end'
+	;
+
+THEN:	'then'
+	;
+	
+ELSE:	'else'
+	;
+	
+WHILE	:	'while'
+		;
+
+DO	:	'do'
+	;
+	
+OR	:	'or'
+	;
+	
+DIV	:	'div'
+	;
+	
+AND	:	'and'
+	;
+	
+NOT	:	'not'
+	;
+	
+PLUS	:	'+'
+		;
+		
+MINUS	:	'-'
+		;
+		
+TIMES	:	'*'
+		;		
+
+AP	:	'('
+	;
+	
+FP	:	')'
+	;
+			
+PV	:	';'
+	;
+	
+VG	: 	','
+	;
+	
+DP	:	':'
+	;		
+
+ATB	:	':='
+	;
+	
+IF	: 	'if'
+	;
