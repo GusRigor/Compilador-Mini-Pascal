@@ -77,6 +77,9 @@ numero	:Digito (Digito)*
 identificador	: Letra (Letra | Digito)*
 				;
 				
+//TIPOS		
+tipo	: Integer | Real | Boolean | Char | String  
+		;
 				
 //TOKENS				
 				
@@ -127,6 +130,27 @@ AND	:	'and'
 	
 NOT	:	'not'
 	;
+	
+Integer	: 	'Integer'
+		;
+		
+Real	:	'Real'
+		;
+		
+Boolean	:	'Boolean'
+		;
+		
+Char	:	'Char'
+		;
+		
+String	:	'String'
+		;
+		
+TRUE	: 	'TRUE'
+		;
+		
+FALSE	:	'FALSE'
+		;
 	
 PLUS	:	'+'
 		;
