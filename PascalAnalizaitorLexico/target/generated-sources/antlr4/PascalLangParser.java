@@ -25,7 +25,7 @@ public class PascalLangParser extends Parser {
 		"<INVALID>", "Digito", "Letra", "Relacao", "'program'", "'procedure'", 
 		"'var'", "'begin'", "'end.'", "'then'", "'else'", "'while'", "'do'", "'or'", 
 		"'div'", "'and'", "'not'", "'integer'", "'real'", "'boolean'", "'char'", 
-		"'String'", "'TRUE'", "'FALSE'", "'+'", "'-'", "'*'", "'('", "')'", "';'", 
+		"'string'", "'TRUE'", "'FALSE'", "'+'", "'-'", "'*'", "'('", "')'", "';'", 
 		"','", "':'", "':='", "'if'", "WS"
 	};
 	public static final int

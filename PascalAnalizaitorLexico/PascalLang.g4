@@ -143,7 +143,7 @@ Boolean	:	'boolean'
 Char	:	'char'
 		;
 		
-String	:	'String'
+String	:	'string'
 		;
 		
 TRUE	: 	'TRUE'

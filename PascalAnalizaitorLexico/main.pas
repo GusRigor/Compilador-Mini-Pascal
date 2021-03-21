@@ -1,7 +1,7 @@
 program Teste;
 
-var x: integer;
+integer x;
 
 begin
- X:=1;
-end.
+ x := 1
+end

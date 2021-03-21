@@ -118,7 +118,7 @@ public class PascalLangLexer extends Lexer {
 		"q\2\2\u00a9\u00aa\7q\2\2\u00aa\u00ab\7n\2\2\u00ab\u00ac\7g\2\2\u00ac\u00ad"+
 		"\7c\2\2\u00ad\u00ae\7p\2\2\u00ae(\3\2\2\2\u00af\u00b0\7e\2\2\u00b0\u00b1"+
 		"\7j\2\2\u00b1\u00b2\7c\2\2\u00b2\u00b3\7t\2\2\u00b3*\3\2\2\2\u00b4\u00b5"+
-		"\7U\2\2\u00b5\u00b6\7v\2\2\u00b6\u00b7\7t\2\2\u00b7\u00b8\7k\2\2\u00b8"+
+		"\7u\2\2\u00b5\u00b6\7v\2\2\u00b6\u00b7\7t\2\2\u00b7\u00b8\7k\2\2\u00b8"+
 		"\u00b9\7p\2\2\u00b9\u00ba\7i\2\2\u00ba,\3\2\2\2\u00bb\u00bc\7V\2\2\u00bc"+
 		"\u00bd\7T\2\2\u00bd\u00be\7W\2\2\u00be\u00bf\7G\2\2\u00bf.\3\2\2\2\u00c0"+
 		"\u00c1\7H\2\2\u00c1\u00c2\7C\2\2\u00c2\u00c3\7N\2\2\u00c3\u00c4\7U\2\2"+
